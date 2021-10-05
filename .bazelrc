@@ -1,5 +1,5 @@
 # Use our custom-configured c++ toolchain.
-build:diab_config --crosstool_top=//toolchain:diab_suite
+build:diab_config --crosstool_top=//tools/bazel/toolchain:diab_suite
 
 # Specify the cpu
 build:diab_config --cpu=AWR294x

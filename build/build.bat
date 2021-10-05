@@ -1,0 +1,1 @@
+bazel build --config=diab_config //main:hello-world
