@@ -46,15 +46,15 @@ def _impl(ctx):
         toolchain_identifier = "TiCompiler-toolchain"
         compiler = "ti"
         cxx_builtin_include_directories = [
-            "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/include/c",
-            "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/include/c++/v1",
-            "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/lib/clang/12.0.1/include",
+            "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/include/c",
+            "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/include/c++/v1",
+            "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/lib/clang/12.0.1/include",
         ]
 
         tool_paths = [
             tool_path(
                 name = "gcc",
-                path = "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmclang",
+                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmclang",
             ),
             tool_path(
                 name = "ld",
@@ -62,7 +62,7 @@ def _impl(ctx):
             ),
             tool_path(
                 name = "ar",
-                path = "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmar",
+                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmar",
             ),
             tool_path(
                 name = "cpp",
@@ -70,19 +70,19 @@ def _impl(ctx):
             ),
             tool_path(
                 name = "gcov",
-                path = "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmcov",
+                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmcov",
             ),
             tool_path(
                 name = "nm",
-                path = "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmnm",
+                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmnm",
             ),
             tool_path(
                 name = "objdump",
-                path = "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmobjdump",
+                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmobjdump",
             ),
             tool_path(
                 name = "strip",
-                path = "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmstrip",
+                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmstrip",
             ),
         ]
     else:
