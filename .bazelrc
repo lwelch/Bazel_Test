@@ -1,13 +1,27 @@
 # Use our custom-configured c++ toolchain.
-build:diab_config --crosstool_top=//tools/bazel/toolchain:diab_suite
+build:windows_config --crosstool_top=//tools/bazel/toolchain:ti_suite
 
 # Specify the cpu
-build:diab_config --cpu=AWR294x
+build:windows_config --cpu=AWR294x
 
 # Specify the compiler
-build:diab_config --compiler=TiCompiler
+build:windows_config --compiler=TiWindows
 
 # Use the default Bazel C++ toolchain to build the tools used during the
 # build.
-build:diab_config --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+build:windows_config --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+
+
+# Use our custom-configured c++ toolchain.
+build:linux_config --crosstool_top=//tools/bazel/toolchain:ti_suite
+
+# Specify the cpu
+build:linux_config --cpu=AWR294x
+
+# Specify the compiler
+build:linux_config --compiler=TiLinux
+
+# Use the default Bazel C++ toolchain to build the tools used during the
+# build.
+build:linux_config --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
 

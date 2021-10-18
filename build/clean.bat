@@ -1,1 +1,1 @@
-bazel clean
+bazelisk clean

@@ -30,7 +30,7 @@ class toolsInit:
         self.tempTiClangZipFilename = 'ti-clang.zip'
         self.pathToToolsDir = self.repoRootPath + 'tools/'
         self.pathToTiClangZip = self.pathToToolsDir + self.tempTiClangZipFilename
-        self.tiClangInstallDir = "C:/ti/compiler/"
+        self.tiClangInstallDir = "C:/ti/"
 
         self.bswDownloadUrl =  self.artifactoryUrl + 'RRU2/bsw/1.0/bsw-1.0.zip'
         self.tempBswFilename = 'BSW.zip'

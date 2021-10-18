@@ -1,0 +1,1 @@
+./bazelisk build --config=linux_config //main:hello-world --verbose_failures

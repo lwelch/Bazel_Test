@@ -2,59 +2,19 @@
 load("@bazel_tools//tools/cpp:cc_toolchain_config_lib.bzl", "tool_path")
 
 def _impl(ctx):
-    if ctx.attr.name == "DiabCompiler_toolchain_config":
-        toolchain_identifier = "DiabCompiler-toolchain"
-        compiler = "diab"
+    if ctx.attr.name == "ti_arm_linux_toolchain_config":
+        toolchain_identifier = "ti-arm-linux-toolchain"
+        compiler = "TiArmLinux"
         cxx_builtin_include_directories = [
-            "C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include"
-        ]
-        tool_paths = [
-            tool_path(
-                name = "gcc",
-                path = "C:/WindRiver/compilers/diab-5.9.6.4/WIN32/bin/dcc",
-            ),
-            tool_path(
-                name = "ld",
-                path = "/usr/bin/ld",
-            ),
-            tool_path(
-                name = "ar",
-                path = "/usr/bin/ar",
-            ),
-            tool_path(
-                name = "cpp",
-                path = "/bin/false",
-            ),
-            tool_path(
-                name = "gcov",
-                path = "/bin/false",
-            ),
-            tool_path(
-                name = "nm",
-                path = "/bin/false",
-            ),
-            tool_path(
-                name = "objdump",
-                path = "/bin/false",
-            ),
-            tool_path(
-                name = "strip",
-                path = "/bin/false",
-            ),
-        ]
-    elif ctx.attr.name == "TiCompiler_toolchain_config":
-        toolchain_identifier = "TiCompiler-toolchain"
-        compiler = "ti"
-        cxx_builtin_include_directories = [
-            "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/include/c",
-            "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/include/c++/v1",
-            "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/lib/clang/12.0.1/include",
+            "/ti/ti-cgt-armllvm_1.3.0.LTS/include/c",
+            "/ti/ti-cgt-armllvm_1.3.0.LTS/include/c++/v1",
+            "/ti/ti-cgt-armllvm_1.3.0.LTS/lib/clang/12.0.1/include",
         ]
 
         tool_paths = [
             tool_path(
                 name = "gcc",
-                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmclang",
+                path = "/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmclang",
             ),
             tool_path(
                 name = "ld",
@@ -62,7 +22,7 @@ def _impl(ctx):
             ),
             tool_path(
                 name = "ar",
-                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmar",
+                path = "/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmar",
             ),
             tool_path(
                 name = "cpp",
@@ -70,19 +30,62 @@ def _impl(ctx):
             ),
             tool_path(
                 name = "gcov",
-                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmcov",
+                path = "/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmcov",
             ),
             tool_path(
                 name = "nm",
-                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmnm",
+                path = "/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmnm",
             ),
             tool_path(
                 name = "objdump",
-                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmobjdump",
+                path = "/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmobjdump",
             ),
             tool_path(
                 name = "strip",
-                path = "C:/ti/compiler/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmstrip",
+                path = "/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmstrip",
+            ),
+        ]
+    elif ctx.attr.name == "ti_arm_windows_toolchain_config":
+        toolchain_identifier = "ti-arm-windows-toolchain"
+        compiler = "TiArmWindows"
+        cxx_builtin_include_directories = [
+            "C:/ti/ti-cgt-armllvm_1.3.0.LTS/include/c",
+            "C:/ti/ti-cgt-armllvm_1.3.0.LTS/include/c++/v1",
+            "C:/ti/ti-cgt-armllvm_1.3.0.LTS/lib/clang/12.0.1/include",
+        ]
+
+        tool_paths = [
+            tool_path(
+                name = "gcc",
+                path = "C:/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmclang",
+            ),
+            tool_path(
+                name = "ld",
+                path = "/usr/bin/ld",
+            ),
+            tool_path(
+                name = "ar",
+                path = "C:/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmar",
+            ),
+            tool_path(
+                name = "cpp",
+                path = "/bin/false",
+            ),
+            tool_path(
+                name = "gcov",
+                path = "C:/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmcov",
+            ),
+            tool_path(
+                name = "nm",
+                path = "C:/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmnm",
+            ),
+            tool_path(
+                name = "objdump",
+                path = "C:/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmobjdump",
+            ),
+            tool_path(
+                name = "strip",
+                path = "C:/ti/ti-cgt-armllvm_1.3.0.LTS/bin/tiarmstrip",
             ),
         ]
     else:

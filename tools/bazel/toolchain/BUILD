@@ -3,20 +3,20 @@ load(":cc_toolchain_config.bzl", "cc_toolchain_config")
 package(default_visibility = ["//visibility:public"])
 
 cc_toolchain_suite(
-    name = "diab_suite",
+    name = "ti_suite",
     toolchains = {
-        "AWR294x": ":DiabCompiler_toolchain",
-        "AWR294x|DiabCompiler": ":DiabCompiler_toolchain",
-        "AWR294x|TiCompiler": ":TiCompiler_toolchain"
+        "AWR294x": ":ti_arm_windows_toolchain",
+        "AWR294x|TiWindows": ":ti_arm_windows_toolchain",
+        "AWR294x|TiLinux": ":ti_arm_linux_toolchain"
     },
 )
 
 filegroup(name = "empty")
 
 cc_toolchain(
-    name = "DiabCompiler_toolchain",
-    toolchain_identifier = "DiabCompiler-toolchain",
-    toolchain_config = ":DiabCompiler_toolchain_config",
+    name = "ti_arm_windows_toolchain",
+    toolchain_identifier = "TiWindows-toolchain",
+    toolchain_config = ":ti_arm_windows_toolchain_config",
     all_files = ":empty",
     compiler_files = ":empty",
     dwp_files = ":empty",
@@ -26,12 +26,12 @@ cc_toolchain(
     supports_param_files = 0,
 )
 
-cc_toolchain_config(name = "DiabCompiler_toolchain_config")
+cc_toolchain_config(name = "ti_arm_windows_toolchain_config")
 
 cc_toolchain(
-    name = "TiCompiler_toolchain",
-    toolchain_identifier = "TiCompiler-toolchain",
-    toolchain_config = ":TiCompiler_toolchain_config",
+    name = "ti_arm_linux_toolchain",
+    toolchain_identifier = "ti-arm-linux-toolchain",
+    toolchain_config = ":ti_arm_linux_toolchain_config",
     all_files = ":empty",
     compiler_files = ":empty",
     dwp_files = ":empty",
@@ -41,4 +41,4 @@ cc_toolchain(
     supports_param_files = 0,
 )
 
-cc_toolchain_config(name = "TiCompiler_toolchain_config")
+cc_toolchain_config(name = "ti_arm_linux_toolchain_config")
