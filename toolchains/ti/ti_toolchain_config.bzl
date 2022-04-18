@@ -1,6 +1,6 @@
 load("@bazel_tools//tools/cpp:cc_toolchain_config_lib.bzl", "feature", "flag_group", "flag_set", "tool_path", "variable_with_value")
 load("@bazel_tools//tools/build_defs/cc:action_names.bzl", "ACTION_NAMES")
-load("//tools/bazel/toolchain:ti_compiler_flags.bzl", "arm_asm_flags", "arm_c_flags", "arm_cpp_flags", "arm_linker_flags", "c66_asm_flags", "c66_c_flags", "c66_cpp_flags", "c66_linker_flags")
+load("//toolchains/ti:ti_compiler_flags.bzl", "arm_asm_flags", "arm_c_flags", "arm_cpp_flags", "arm_linker_flags", "c66_asm_flags", "c66_c_flags", "c66_cpp_flags", "c66_linker_flags")
 
 all_link_actions = [
     ACTION_NAMES.cpp_link_executable,

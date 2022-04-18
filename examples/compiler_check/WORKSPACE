@@ -1,0 +1,6 @@
+workspace(name = "compiler_check")
+
+local_repository(
+    name = "bazel_config",
+    path = "../.."
+)

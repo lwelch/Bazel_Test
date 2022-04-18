@@ -6,12 +6,12 @@ try-import %workspace%/user.bazelrc
 build --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
 
 # Setup the Ti Arm config tool
-build:ti_arm_config --crosstool_top=//toolchains/ti:ti_suite
+build:ti_arm_config --crosstool_top=@bazel_config//toolchains/ti:ti_suite
 build:ti_arm_config --cpu=ti-arm
 
 # Setup the Ti C66 config tool
-build:c66_config --crosstool_top=//toolchains/ti:ti_suite
-build:c66_config --cpu=ti-c66
+build:ti_c66_config --crosstool_top=@bazel_config//toolchains/ti:ti_suite
+build:ti_c66_config --cpu=ti-c66
 
 # Setup the Windows Clang configuration
 # This will autodetect Clang on the users computer and
