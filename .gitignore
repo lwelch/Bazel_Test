@@ -9,6 +9,7 @@
 # Ignore all bazel-* symlinks. There is no full list since this can change
 # based on the name of the directory bazel is cloned into.
 /bazel-*
+*bazel-*
 # Ignore outputs generated during Bazel bootstrapping.
 /output/
 
@@ -17,3 +18,4 @@ user.bazelrc
 
 # Ignore bazel download folder
 tools/bazel/downloads
+*.code-workspace

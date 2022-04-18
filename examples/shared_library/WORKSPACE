@@ -1,0 +1,6 @@
+workspace(name = "shared_library")
+
+local_repository(
+    name = "bazel_config",
+    path = "../.."
+)

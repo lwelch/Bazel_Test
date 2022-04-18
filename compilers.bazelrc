@@ -1,0 +1,31 @@
+ # Import a user bazel config file, if available.
+try-import %workspace%/user.bazelrc
+
+# Use the default Bazel C++ toolchain to build the tools used during the
+# build.
+build --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+
+# Setup the Ti Arm config tool
+build:ti_arm_config --crosstool_top=//toolchains/ti:ti_suite
+build:ti_arm_config --cpu=ti-arm
+
+# Setup the Ti C66 config tool
+build:c66_config --crosstool_top=//toolchains/ti:ti_suite
+build:c66_config --cpu=ti-c66
+
+# Setup the Windows Clang configuration
+# This will autodetect Clang on the users computer and
+# use that installation
+build:win_clang_config --compiler=clang-cl
+
+# Setup the Unix Clang Configurations.
+# These assume Clang is installed using the unix pacakge manager
+# and available in usr/bin
+build:unix_clang14_config --action_env=CC=clang-14
+build:unix_clang14_config --define=linux-clang=True
+build:unix_clang13_config --action_env=CC=clang-13
+build:unix_clang13_config --define=linux-clang=True
+build:unix_clang12_config --action_env=CC=clang-12
+build:unix_clang12_config --define=linux-clang=True
+build:unix_clang11_config --action_env=CC=clang-11
+build:unix_clang11_config --define=linux-clang=True
